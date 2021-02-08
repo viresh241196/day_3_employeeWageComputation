@@ -21,8 +21,10 @@ public class line_comparison_problem {
 		double length2 = Math.sqrt(Math.pow(a2-a1,2)+Math.pow(b2-b1,2));
 		System.out.println("length2: "+length2);
 		if ( length1==length2)
-			System.out.println("length is equal");
+			System.out.println("length1 is equal to length2");
+		else if (length1 > length2)
+			System.out.println("length1 is greater than length2");
 		else
-			System.out.println("length is not equal");
+			 System.out.println("length1 is greater than length2");
         }
 }
