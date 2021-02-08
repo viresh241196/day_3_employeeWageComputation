@@ -28,6 +28,7 @@ public class employeeWageComputation {
 
 			}
 		}
+		System.out.println("hours "+ work_hours +" days "+ work_days);
 		System.out.println("salary : " + salary);
 
         }
