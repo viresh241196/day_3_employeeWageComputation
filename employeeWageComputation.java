@@ -1,4 +1,4 @@
-public class employeeWageComputation {
+public class EmployeeWageComputation {
         public static void main(String[] args) {
                 // constants
                 int is_full_time = 8;
@@ -24,7 +24,6 @@ public class employeeWageComputation {
 					work_hours += is_part_time;
 					work_days += 1;
 					break;
-				default:
 
 			}
 		}
