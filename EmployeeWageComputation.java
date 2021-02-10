@@ -1,6 +1,9 @@
 public class EmployeeWageComputation {
     public static final int present_fullTime = 2;
     public static final int present_partTime = 1;
+    public static final int is_full_time = 8;
+    public static final int is_part_time = 4;
+    public static final int per_hour_wage = 20;
 
     static double calulate_salary(double salary, int per_hour_wage, int work_time) {
         salary += per_hour_wage * work_time;
@@ -13,10 +16,8 @@ public class EmployeeWageComputation {
     }
 
     public static void main(String[] args) {
-        // constants
-        int is_full_time = 8, is_part_time = 4, per_hour_wage = 20, work_hours = 0, work_days = 0;
+        int  work_hours = 0, work_days = 0;
         double salary = 0;
-        // computation
         while (work_hours < 100 && work_days < 20) {
             double empcheck = Math.floor(Math.random() * 10) % 3;
             int check = (int) empcheck;
