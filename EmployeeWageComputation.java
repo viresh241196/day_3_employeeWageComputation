@@ -1,4 +1,4 @@
-public class employeeWageComputation {
+public class EmployeeWageComputation {
         public static void main(String[] args) {
                 // constants
                 int is_full_time = 1;
