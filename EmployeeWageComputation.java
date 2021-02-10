@@ -18,7 +18,6 @@ public class EmployeeWageComputation {
                         System.out.println("employee is abscent ");
 		}
 		System.out.println("salary : " + salary);
-
         }
 }
 
