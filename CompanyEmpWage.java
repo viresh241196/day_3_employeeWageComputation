@@ -1,9 +1,15 @@
+interface IComputeEmpWage{
+    public void addCompanyEmpWage(String company, int per_hour_wage, int max_work_days, int max_work_hours);
+    public void calculateSalary();
+    public int getTotalWage(String company);
+}
+
 public class CompanyEmpWage {
     public String company;
     public int per_hours_wage;
     public int max_work_days;
     public int max_work_hours;
-    public int salary;
+    public int salary = 0;
 
     public CompanyEmpWage(String company, int per_hour_wage, int max_work_days, int max_work_hours) {
         this.company = company;
@@ -12,7 +18,7 @@ public class CompanyEmpWage {
         this.max_work_hours = max_work_hours;
     }
 
-    public void setTotalEmpWage(int salary){
+    public void setTotalEmpWage(int salary) {
         this.salary = salary;
     }
 
