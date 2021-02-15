@@ -7,7 +7,6 @@ public class EmployeeWageComputation {
     public static final int IS_FULL_TIME = 8;
     public static final int IS_PART_TIME = 4;
 
-//    private int numOfCompany = 0;
     private ArrayList<CompanyEmpWage> companyEmpWageArray;
 
     public EmployeeWageComputation() {
@@ -16,7 +15,6 @@ public class EmployeeWageComputation {
 
     private void addCompanyEmpWage(String company, int per_hour_wage, int max_work_days, int max_work_hours) {
         companyEmpWageArray.add(new CompanyEmpWage(company, per_hour_wage, max_work_days, max_work_hours));
-//        numOfCompany++;
     }
 
     private void calculateSalary() {
@@ -27,7 +25,7 @@ public class EmployeeWageComputation {
     }
 
     private int calculateSalary(CompanyEmpWage companyEmpWage) {
-        int work_hours = 0, work_days = 0;
+        int work_hours = 0, work_days = 0, daily_wage = 0;
         while (work_hours < companyEmpWage.max_work_hours && work_days < companyEmpWage.max_work_days) {
             work_days++;
             double empcheck = Math.floor(Math.random() * 10) % 3;
@@ -35,14 +33,17 @@ public class EmployeeWageComputation {
             switch (check) {
                 case PRESENT_FULL_TIME:
                     work_hours += IS_FULL_TIME;
+                    daily_wage = 8 * companyEmpWage.per_hours_wage;
                     break;
                 case PRESENT_PART_TIME:
                     work_hours += IS_PART_TIME;
+                    daily_wage = 4 * companyEmpWage.per_hours_wage;
                     break;
                 default:
                     work_hours += 0;
             }
-            System.out.println("Day" + work_days + " Total working hrs " + work_hours);
+            System.out.println("Day" + work_days + " daily wage :" + daily_wage + " Total working hrs :" + work_hours);
+            daily_wage = 0;
         }
         return companyEmpWage.salary = work_hours * companyEmpWage.per_hours_wage;
     }
@@ -66,10 +67,10 @@ public class EmployeeWageComputation {
         EmployeeWageComputation empWageBuilder = new EmployeeWageComputation();
         ArrayList company1details = empWageBuilder.getCompanydetails();
         empWageBuilder.addCompanyEmpWage((String) company1details.get(0), (Integer) company1details.get(1),
-                (Integer) company1details.get(2),(Integer) company1details.get(3));
+                (Integer) company1details.get(2), (Integer) company1details.get(3));
         ArrayList company2details = empWageBuilder.getCompanydetails();
         empWageBuilder.addCompanyEmpWage((String) company2details.get(0), (Integer) company2details.get(1),
-                (Integer) company2details.get(2),(Integer) company2details.get(3));
+                (Integer) company2details.get(2), (Integer) company2details.get(3));
         empWageBuilder.calculateSalary();
     }
 }
