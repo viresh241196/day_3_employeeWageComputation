@@ -1,8 +1,8 @@
 public class CompanyEmpWage {
-    public final String company;
-    public final int per_hours_wage;
-    public final int max_work_days;
-    public final int max_work_hours;
+    public String company;
+    public int per_hours_wage;
+    public int max_work_days;
+    public int max_work_hours;
     public int salary;
 
     public CompanyEmpWage(String company, int per_hour_wage, int max_work_days, int max_work_hours) {
