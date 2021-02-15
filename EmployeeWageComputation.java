@@ -7,22 +7,22 @@ public class EmployeeWageComputation {
     public static final int IS_FULL_TIME = 8;
     public static final int IS_PART_TIME = 4;
 
-    private int numOfCompany = 0;
-    private CompanyEmpWage[] companyEmpWageArray;
+//    private int numOfCompany = 0;
+    private ArrayList<CompanyEmpWage> companyEmpWageArray;
 
     public EmployeeWageComputation() {
-        companyEmpWageArray = new CompanyEmpWage[5];
+        companyEmpWageArray = new ArrayList<CompanyEmpWage>();
     }
 
     private void addCompanyEmpWage(String company, int per_hour_wage, int max_work_days, int max_work_hours) {
-        companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company, per_hour_wage, max_work_days, max_work_hours);
-        numOfCompany++;
+        companyEmpWageArray.add(new CompanyEmpWage(company, per_hour_wage, max_work_days, max_work_hours));
+//        numOfCompany++;
     }
 
     private void calculateSalary() {
-        for (int i = 0; i < numOfCompany; i++) {
-            companyEmpWageArray[i].setTotalEmpWage(this.calculateSalary(companyEmpWageArray[i]));
-            System.out.println(companyEmpWageArray[i]);
+        for (int i = 0; i < companyEmpWageArray.size(); i++) {
+            companyEmpWageArray.get(i).setTotalEmpWage(this.calculateSalary(companyEmpWageArray.get(i)));
+            System.out.println(companyEmpWageArray.get(i));
         }
     }
 
